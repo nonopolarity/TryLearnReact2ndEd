@@ -1,12 +1,57 @@
-import logo from './logo.svg';
+
 import { FaStar } from 'react-icons/fa';
+import Star  from './Star';
 
 import './App.css';
 
 function App() {
+
   return (
-    <FaStar />
+    <>
+      <FaStar color="red" />
+      <Star selected />
+      <Star selected="false" />
+      <Star selected={false} />
+      <Star />
+      <Star color />
+      <Star color="hi" />
+      <Star color={1+2} />
+      
+    </>
   );
+
+  // return (
+  //   <>
+  //     <div>1</div>
+  //     <div>2</div>
+  //     <div>3</div>
+  //   </>
+  // );
+
+  // return (
+  //   [
+  //     <div>1</div>,
+  //     <div>2</div>,
+  //     <div>3</div>
+  //   ]
+  // );
+
+  // return (
+  //   <>
+  //     <FaStar color="red" />
+  //     <FaStar color="red" />
+  //     <FaStar color="red" />
+  //   </>
+  // );
+
+  // (
+  //   [
+  //     <FaStar color="red" />,
+  //     <FaStar color="red" />,
+  //     <FaStar color="red" />
+  //   ]
+  // );
+
   // return (
   //   <div className="App">
   //     <header className="App-header">
