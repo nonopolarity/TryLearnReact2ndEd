@@ -1,10 +1,13 @@
+import { useState } from "react";
 import Star from "./Star";
 
-export default function StarRating({  }) {
-    console.log(`selected ${selected}, color ${color}`);
+export default function StarRating({ numStars = 5 }) {
+    console.log(`numStars ${numStars}`);
 
-  return <FaStar color={selected ? "red" : "grey"} />;
+    const [numSelectedStars] = useState(3);
+
+  return Array.from({length: numStars}).map((e, i) => <Star selected={i < numSelectedStars} />);
 }
 
-export { Star };
+export { StarRating };
 // export default Star;

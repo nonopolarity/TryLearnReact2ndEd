@@ -1,6 +1,8 @@
 
 import { FaStar } from 'react-icons/fa';
 import Star  from './Star';
+import StarRating from "./StarRating";
+
 
 import './App.css';
 
@@ -16,7 +18,9 @@ function App() {
       <Star color />
       <Star color="hi" />
       <Star color={1+2} />
-      
+      <div>
+        <StarRating />
+      </div>
     </>
   );
 
