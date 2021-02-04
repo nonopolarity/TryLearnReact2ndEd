@@ -8,7 +8,7 @@ export default function StarRating({ numStars = 5 }) {
 
   return Array.from({length: numStars}).map(
       (e, i) => <Star key={i} selected={i < numSelectedStars}
-      handleMouseOver={() => setNumSelectedStars(i + 1)} />
+      handleSelect={() => setNumSelectedStars(i + 1)} />
   );
 }
 

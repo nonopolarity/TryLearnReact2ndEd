@@ -21,6 +21,9 @@ function App() {
       <div>
         <StarRating />
       </div>
+      <div>
+        <StarRating numStars="10" />
+      </div>
     </>
   );
 
