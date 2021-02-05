@@ -1,13 +1,26 @@
 
 import { FaStar } from 'react-icons/fa';
-import Star  from './Star';
+import Star from './Star';
 import StarRating from "./StarRating";
+import { useState, useEffect } from "react";
 
 
 import './App.css';
 
 function App() {
+  const [userData, setUserData] = useState([]);
 
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
+      .then(res => res.json())
+      .then(data => {
+        console.log("data obtained", data, Array.isArray(data));
+        setUserData(data);
+      })
+  }, []);
+
+  console.log("CURRENT DATA IS", userData);
+  console.log("CURRENT DATA SLICE 3 IS", userData.slice(3));
   return (
     <>
       <FaStar color="red" />
@@ -17,7 +30,7 @@ function App() {
       <Star />
       <Star color />
       <Star color="hi" />
-      <Star color={1+2} />
+      <Star color={1 + 2} />
       <div>
         <StarRating />
       </div>
@@ -25,8 +38,17 @@ function App() {
         <StarRating numStars="10" />
       </div>
       <div>wah la
-        <StarRating numStars="12" />
+        <StarRating yee="wah" numStars="12" hm="ha" />
       </div>
+      <ul>
+        {userData.slice(0, 3).map((e, i) =>
+          <li key={i}>
+
+          {e.url}
+          <img src={e.thumbnailUrl} />
+        </li>
+        )}
+      </ul>
     </>
   );
 

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Star from "./Star";
 
-export default function StarRating({ numStars = 5 }) {
-  console.log(`numStars ${numStars}`);
+export default function StarRating({ numStars = 5, ...props }) {
+  console.log(`numStars ${numStars} and the props ${props}`, props);
 
   const [numSelectedStars, setNumSelectedStars] = useState(3);
 
